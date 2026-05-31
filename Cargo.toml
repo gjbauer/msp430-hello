@@ -1,0 +1,20 @@
+[package]
+name = "msp430-hello"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+msp430-rt = "0.4"
+panic-halt = "1.0.0"
+
+[dependencies.msp430]
+version = "0.4"  # Use your target version
+features = ["critical-section-single-core"]
+
+[dependencies.msp430fr5994]
+version = "0.2.0"
+features = ["critical-section"]
+
+[profile.release]
+opt-level = "s"
+lto = true
